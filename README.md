@@ -16,4 +16,4 @@ Hello! I am Ricardo Bortolotti, Ph.D. in Mathematics and doing a carreer transit
 
 - Results: I divided the clients into 5 groups, profiling them according to similar behaviour as customers. I provided business insights to better understand their clients and recommendations of promotions to increase the number of sales.
 
-[Click here to check the complete project](Customer-segmentation/)
+[Click here to check the complete project](https://github.com/Ricardo-Bortolotti/Customer-segmentation/tree/main)
