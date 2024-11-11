@@ -2,7 +2,7 @@
 
 #### Welcome to my Data Science / Machine Learning portfolio!
 
-Hello! I am Ricardo Bortolotti, Ph.D. in Mathematics and doing a carreer transition do Data Science / Machine Learning. My passion lies in Machine Learning, Statistics and Mathematics, and I am constantly developing on projects in these areas. Explore them below!
+Hello! I am Ricardo Bortolotti, Ph.D. in Mathematics and doing a carreer transition do Data Science / Machine Learning. My passion lies in Machine Learning, Statistics and Mathematics, and I am constantly developing on projects in these areas. See them below!
 
 ## Projects
 
