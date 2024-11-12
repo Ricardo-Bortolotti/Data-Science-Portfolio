@@ -2,7 +2,7 @@
 
 #### Welcome to my Data Science / Machine Learning portfolio!
 
-Hello! I am Ricardo Bortolotti, Ph.D. in Mathematics and doing a carreer transition do Data Science / Machine Learning. My passion lies in Machine Learning, Statistics and Mathematics, and I am constantly developing on projects in these areas. See them below!
+Hello! I am Ricardo Bortolotti, Ph.D. in Mathematics, in a career transition to Data Science / Machine Learning. My passion lies in Machine Learning, Statistics and Mathematics, and I am constantly developing projects in these areas. See them below!
 
 ## Projects
 
@@ -14,6 +14,6 @@ Hello! I am Ricardo Bortolotti, Ph.D. in Mathematics and doing a carreer transit
 
 - Business problem: A retail store wants to understand more deeply the characteristics of its customers and strategically use this information to increase the number of sales and revenue. For this, they want to segment the customers into profiles according to preferences, spending patterns and personal information.
 
-- Results: I divided the clients into 5 groups, profiling them according to similar behaviour as customers. I provided business insights to better understand their clients and recommendations of promotions to increase the number of sales.
+- Results: I divided the clients into 5 groups, profiling them according to similar behavior as customers. I provided business insights to better understand their clients and recommendations for promotions to increase the number of sales.
 
 [Click here to check the complete project](https://github.com/Ricardo-Bortolotti/Customer-segmentation/tree/main)
