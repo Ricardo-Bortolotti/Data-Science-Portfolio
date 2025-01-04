@@ -38,4 +38,8 @@ Hello! I am Ricardo Bortolotti, Ph.D. in Mathematics, in a career transition to 
 
 - Results: We developed a Model of Classification that predicts whether a breast mass is cancer (malignant) or not (benign). The algorithm of classification with the best performance was Light GBM.
 
+## Time Serie Analysis
 
+### 4- [Stock Price Time Series Analysis](https://github.com/Ricardo-Bortolotti/Stock-price-time-series/tree/main)
+
+- Description: This project focuses on the analysis of stock price data using time series analysis techniques. The goal is to explore the historical performance of a stock and identify trends, momentum, volatility, and potential trading signals using various technical indicators.
