@@ -19,7 +19,7 @@ Hello! I’m Ricardo Bortolotti, a Data Scientist with a Ph.D. in Mathematics. I
 
 ## Regression
 
-### 2- [Prediction of House Prices](https://github.com/Ricardo-Bortolotti/Regression-house-prices/tree/main)
+### 2- [Prediction of House Prices (Python)](https://github.com/Ricardo-Bortolotti/Regression-house-prices/tree/main)
 
 - Description: In this project, I performed a supervised Machine Learning task of prediction using several algorithms of Regression, which allowed us to obtain a good model that predicts the Price of a house based in its features. 
 
@@ -30,7 +30,7 @@ Hello! I’m Ricardo Bortolotti, a Data Scientist with a Ph.D. in Mathematics. I
 
 ## Classification
 
-### 3- [Prediction of Breast Cancer](https://github.com/Ricardo-Bortolotti/Breast-cancer-prediction/tree/main)
+### 3- [Prediction of Breast Cancer (Python)](https://github.com/Ricardo-Bortolotti/Breast-cancer-prediction/tree/main)
 
 - Description: In this project, I performed a supervised Machine Learning task of Classification using several algorithms of classification, which allowed us to obtain a good model that predicts of a digitalized image of breast mass corresponding to cancer. 
 
@@ -40,6 +40,6 @@ Hello! I’m Ricardo Bortolotti, a Data Scientist with a Ph.D. in Mathematics. I
 
 ## Time Serie Analysis
 
-### 4- [Stock Price Time Series Analysis](https://github.com/Ricardo-Bortolotti/Stock-price-time-series/tree/main)
+### 4- [Stock Price Time Series Analysis (Python)](https://github.com/Ricardo-Bortolotti/Stock-price-time-series/tree/main)
 
 - Description: This project focuses on the analysis of stock price data using time series analysis techniques. The goal is to explore the historical performance of a stock and identify trends, momentum, volatility, and potential trading signals using various technical indicators.
