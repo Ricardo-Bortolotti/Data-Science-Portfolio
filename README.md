@@ -1,21 +1,96 @@
-# Data Science & Machine Learning Portfolio
+# Data Science, Machine Learning & AI Portfolio
 
-Hi, I’m Ricardo Bortolotti — a Data Scientist with a Ph.D. in Mathematics and professional experience developing Machine Learning solutions for real-world applications.
+Hi, I'm Ricardo Bortolotti — a Data Scientist with a Ph.D. in Mathematics and professional experience developing **Machine Learning** and **AI** solutions for real-world applications.
 
 My background combines:
+
 - Machine Learning & Predictive Modeling
+- Deep Learning & Computer Vision
 - Statistics & Applied Mathematics
 - Data Engineering & Automation
-- MLOps & Production ML Systems
+- MLOps & Production AI/ML Systems
 - API Development & Data Products
 
 I currently work on large-scale data problems involving fraud detection, healthcare analytics, graph-based analysis, and operational machine learning systems.
 
-This portfolio contains projects ranging from exploratory machine learning notebooks to end-to-end production-oriented ML applications.
+This portfolio contains projects ranging from exploratory machine learning notebooks to **end-to-end production-oriented AI applications** deployed on the cloud.
 
 ---
 
-# 🚀 Featured Project — Production ML System
+# 🚀 Featured Projects — Production AI/ML Systems
+
+## 🐾 [PetVision AI — Cat vs Dog Image Classification](https://github.com/Ricardo-Bortolotti/pet-classifier)
+
+End-to-end **Deep Learning** platform for image classification, with a separated frontend and REST API deployed in production on the cloud.
+
+### Overview
+
+This project implements a complete MLOps workflow for computer vision — from baseline CNN experiments to a champion **EfficientNet-B0** model served in production:
+
+- Transfer learning and fine-tuning experiments
+- Hyperparameter optimization with Optuna
+- Experiment tracking and model registry with MLflow
+- REST API for inference and Grad-CAM explainability
+- Automated CI/CD and cloud deployment
+
+### Live demo
+
+| Service | URL |
+|---------|-----|
+| Frontend | https://pet-classifier-up.streamlit.app/ |
+| API | https://pet-classifier-production.up.railway.app/ |
+
+### Architecture
+
+```text
+Streamlit Cloud              Railway (Docker)
+     │                              │
+     │  HTTPS                       │
+     └──────────►  FastAPI  ────────┘
+                        │
+                        ▼
+              EfficientNet-B0 (champion)
+                        │
+                        ▼
+              Cat / Dog prediction
+              + Grad-CAM explainability
+```
+
+### CI/CD pipeline
+
+```text
+git push main → GitHub Actions (Ruff + Pytest) → Docker build → Deploy Railway
+```
+
+### Main Features
+
+- **Deep Learning** inference with PyTorch (EfficientNet-B0 champion model)
+- FastAPI REST API (`/predict`, `/explain`, health, monitoring)
+- Grad-CAM explainability overlay
+- Streamlit frontend integrated with the live API
+- Lean Docker image (CPU-only PyTorch, no CUDA)
+- GitHub Actions — lint and tests on every push
+- Fully automatic deploy to Railway on `main`
+- Model baked into the container at build time (GitHub Release artifact)
+- Modular architecture — inference decoupled from training code
+
+### Tech Stack
+
+- Python 3.11
+- PyTorch & TorchVision
+- FastAPI & Pydantic
+- Streamlit
+- MLflow & Optuna
+- Docker
+- GitHub Actions
+- Railway & Streamlit Cloud
+- Ruff & Pytest
+
+### Why This Project Matters
+
+This project demonstrates the full journey from **Deep Learning experimentation** to a **production AI system** — including HPO, champion selection, containerized inference, cloud deploy, frontend/backend integration, and automated CI/CD.
+
+---
 
 ## 💳 [Credit Card Fraud Detection](https://github.com/Ricardo-Bortolotti/Fraud-detection-project)
 
@@ -24,6 +99,7 @@ End-to-end Machine Learning system for credit card fraud detection using FastAPI
 ### Overview
 
 This project implements a complete production-oriented ML workflow, including:
+
 - Model experimentation and tracking
 - API deployment
 - Prediction monitoring
@@ -81,12 +157,14 @@ This project demonstrates the transition from notebook-based Machine Learning ex
 Machine Learning project using clustering techniques to segment retail customers according to purchasing behavior and demographic information.
 
 ### Highlights
+
 - K-Means clustering
 - PCA dimensionality reduction
 - Exploratory Data Analysis
 - Customer behavior analysis
 
 ### Results
+
 Customers were segmented into behavioral groups, generating insights for targeted marketing and sales strategies.
 
 ---
@@ -98,12 +176,14 @@ Customers were segmented into behavioral groups, generating insights for targete
 Regression project using supervised Machine Learning algorithms to predict house prices based on property characteristics.
 
 ### Highlights
+
 - Regression modeling
 - Feature analysis
 - Hyperparameter tuning with GridSearchCV
 - Model comparison
 
 ### Results
+
 The best-performing model was Random Forest Regression after hyperparameter optimization.
 
 ---
@@ -115,12 +195,14 @@ The best-performing model was Random Forest Regression after hyperparameter opti
 Classification project for predicting whether a breast mass is malignant or benign using supervised learning techniques.
 
 ### Highlights
+
 - Classification models
 - Medical dataset analysis
 - Model evaluation metrics
 - LightGBM implementation
 
 ### Results
+
 Developed a classification model capable of supporting diagnostic analysis with strong predictive performance.
 
 ---
@@ -132,36 +214,48 @@ Developed a classification model capable of supporting diagnostic analysis with 
 Time series analysis project focused on stock price behavior, volatility, trends, and technical indicators.
 
 ### Highlights
+
 - Financial time series analysis
 - Trend analysis
 - Volatility exploration
 - Technical indicators
 
 ### Results
+
 Exploratory analysis identified relevant temporal patterns and market behavior indicators.
 
 ---
 
 # 🛠️ Skills & Technologies
 
-## Machine Learning & AI
+## Machine Learning, AI & Deep Learning
+
 - Scikit-learn
 - XGBoost
 - LightGBM
+- **PyTorch**
+- **Deep Learning** & Transfer Learning
+- Computer Vision
 - Statistical Modeling
 - Feature Engineering
 - Predictive Analytics
 
 ## Data Engineering & MLOps
+
 - FastAPI
 - MLflow
+- Optuna
 - Docker
 - PostgreSQL
 - SQLAlchemy
-- CI/CD Concepts
+- **GitHub Actions**
+- **Railway**
+- CI/CD
 - Experiment Tracking
+- Model Registry
 
 ## Data Analysis & Visualization
+
 - Python
 - SQL
 - Pandas
@@ -171,12 +265,13 @@ Exploratory analysis identified relevant temporal patterns and market behavior i
 - Power BI
 
 ## Software & Infrastructure
+
 - Git & GitHub
 - REST APIs
 - Containerization
 - Modular Architecture
-- Testing
-- Automation
+- Testing & Automation
+- Cloud Deploy
 
 ---
 
@@ -184,11 +279,11 @@ Exploratory analysis identified relevant temporal patterns and market behavior i
 
 Before transitioning full-time into Data Science, I worked for over 10 years as a university professor and researcher in Mathematics, publishing academic papers in international journals and developing strong analytical and problem-solving skills.
 
-Today, I apply this analytical background to Machine Learning, Data Science, and production-oriented AI systems.
+Today, I apply this analytical background to **Machine Learning**, **Data Science**, **AI**, and production-oriented systems.
 
 ---
 
 # 📫 Contact
 
 - GitHub: https://github.com/Ricardo-Bortolotti
-- LinkedIn: www.linkedin.com/in/ricardo-bortolotti
+- LinkedIn: https://www.linkedin.com/in/ricardo-bortolotti
