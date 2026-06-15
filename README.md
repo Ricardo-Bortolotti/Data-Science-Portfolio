@@ -6,18 +6,119 @@ My background combines:
 
 - Machine Learning & Predictive Modeling
 - Deep Learning & Computer Vision
+- **Retrieval-Augmented Generation (RAG) & LLM Applications**
+- **Multi-Agent AI Workflows**
 - Statistics & Applied Mathematics
 - Data Engineering & Automation
 - MLOps & Production AI/ML Systems
 - API Development & Data Products
 
-I currently work on large-scale data problems involving fraud detection, healthcare analytics, graph-based analysis, and operational machine learning systems.
+I currently work on large-scale data problems involving fraud detection, healthcare analytics, graph-based analysis, embeddings, semantic search, and operational machine learning systems.
 
 This portfolio contains projects ranging from exploratory machine learning notebooks to **end-to-end production-oriented AI applications** deployed on the cloud.
 
 ---
 
 # 🚀 Featured Projects — Production AI/ML Systems
+
+## 📚 [Book Research Agent — RAG + Multi-Agent Study Materials](https://github.com/Ricardo-Bortolotti/research-workflow-agent)
+
+End-to-end **Generative AI** platform that transforms PDFs into structured study materials using RAG, vector search, and a **LangGraph** multi-agent workflow — with a separated Streamlit frontend and FastAPI backend deployed in production.
+
+### Overview
+
+This project implements a complete document intelligence pipeline — from PDF ingestion to grounded LLM outputs:
+
+- PDF loading, chunking, and embedding via Hugging Face Inference API
+- ChromaDB vector store for semantic retrieval
+- Five specialized agents orchestrated as a linear LangGraph DAG
+- REST API for upload, analysis, and structured results
+- Slim Docker API image (no local PyTorch) + lightweight Streamlit client
+- Automated CI/CD and split cloud deployment
+
+### Live demo
+
+| Service | URL |
+|---------|-----|
+| Frontend | https://research-workflow-agent-giekafxwvrbkmzllhjlnt2.streamlit.app/ |
+| API | https://research-workflow-agent-production.up.railway.app/ |
+| API docs | https://research-workflow-agent-production.up.railway.app/docs |
+
+### Architecture
+
+```text
+Streamlit Cloud              Railway (Docker API)
+     │                              │
+     │  HTTPS                       │
+     └──────────►  FastAPI  ────────┘
+                        │
+          ┌─────────────┼─────────────┐
+          ▼             ▼             ▼
+      load PDF    chunk + embed   ChromaDB
+          │             │             │
+          └─────────────┴─────────────┘
+                        │
+                        ▼
+              retrieve top-k chunks
+                        │
+                        ▼
+              LangGraph agent DAG
+         Summary → Concepts → Quiz
+              → Flashcards → Mind Map
+                        │
+                        ▼
+              Hugging Face Inference API
+```
+
+### Agent workflow (DAG)
+
+```text
+START → SummaryAgent → ConceptAgent → QuizAgent
+      → FlashcardAgent → MindMapAgent → END
+```
+
+Each agent receives the same retrieved context and produces structured JSON (or text) grounded in the document.
+
+### CI/CD pipeline
+
+```text
+git push main → GitHub Actions (Ruff + Pytest) → Docker build (API + UI images)
+```
+
+Railway deploys the API from the main `Dockerfile`. Streamlit Community Cloud deploys the UI using `pyproject.toml` + `uv.lock`.
+
+### Main Features
+
+- **RAG pipeline** — PDF ingestion, recursive text splitting, HF API embeddings (`BAAI/bge-small-en-v1.5`)
+- **Vector search** — ChromaDB persistent store with configurable `top_k` retrieval
+- **Multi-agent workflow** — LangGraph linear DAG with five specialized agents
+- **Structured outputs** — executive summary, concepts, quiz, flashcards, hierarchical mind map
+- FastAPI REST API (`/upload`, `/analyze`, `/results/{id}`, `/health`)
+- Streamlit UI as a thin HTTP client (HF token only on the API)
+- Separate Docker images for API (full RAG stack) and UI (minimal deps)
+- **108+ unit tests** with mocked LLM and vector store (no API key in CI)
+- GitHub Actions — lint, tests, and Docker build on every push/PR
+- Cloud deploy — API on Railway, frontend on Streamlit Community Cloud
+
+### Tech Stack
+
+- Python 3.11
+- FastAPI & Pydantic
+- LangChain & LangGraph
+- ChromaDB
+- Hugging Face Inference API (LLM + embeddings)
+- Streamlit & httpx
+- Docker & docker-compose
+- **uv** (`pyproject.toml` / `uv.lock`)
+- GitHub Actions
+- Railway & Streamlit Cloud
+- Ruff & Pytest
+
+### Why This Project Matters
+
+This project demonstrates how to build a **production GenAI application** with RAG and agent orchestration — including document indexing, grounded retrieval, multi-step LLM workflows, API design, split frontend/backend deployment, container optimization for cloud RAM limits, and engineering practices (tests, lint, CI).
+
+---
 
 ## 🐾 [PetVision AI — Cat vs Dog Image Classification](https://github.com/Ricardo-Bortolotti/pet-classifier)
 
@@ -236,6 +337,10 @@ Exploratory analysis identified relevant temporal patterns and market behavior i
 - **PyTorch**
 - **Deep Learning** & Transfer Learning
 - Computer Vision
+- **Retrieval-Augmented Generation (RAG)**
+- **LangGraph** & multi-agent workflows
+- **Embeddings & semantic search**
+- **Hugging Face Inference API**
 - Statistical Modeling
 - Feature Engineering
 - Predictive Analytics
@@ -248,6 +353,9 @@ Exploratory analysis identified relevant temporal patterns and market behavior i
 - Docker
 - PostgreSQL
 - SQLAlchemy
+- **LangChain**
+- **ChromaDB**
+- **uv** (Python package manager)
 - **GitHub Actions**
 - **Railway**
 - CI/CD
@@ -271,6 +379,7 @@ Exploratory analysis identified relevant temporal patterns and market behavior i
 - Containerization
 - Modular Architecture
 - Testing & Automation
+- **pytest** & **Ruff**
 - Cloud Deploy
 
 ---
@@ -287,3 +396,4 @@ Today, I apply this analytical background to **Machine Learning**, **Data Scienc
 
 - GitHub: https://github.com/Ricardo-Bortolotti
 - LinkedIn: https://www.linkedin.com/in/ricardo-bortolotti
+
