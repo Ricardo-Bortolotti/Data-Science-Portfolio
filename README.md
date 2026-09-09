@@ -7,6 +7,7 @@ My background combines:
 - Machine Learning & Predictive Modeling
 - Deep Learning & Computer Vision
 - **Retrieval-Augmented Generation (RAG) & LLM Applications**
+- **GraphRAG & Knowledge Graphs**
 - **Multi-Agent AI Workflows**
 - Statistics & Applied Mathematics
 - Data Engineering & Automation
@@ -20,6 +21,72 @@ This portfolio contains projects ranging from exploratory machine learning noteb
 ---
 
 # 🚀 Featured Projects — Production AI/ML Systems
+
+## 🎬 [CineGraphRAG — Explainable Movie Intelligence on a Knowledge Graph](https://github.com/Ricardo-Bortolotti/cine-graph-rag)
+
+End-to-end **GraphRAG** system that turns MovieLens ratings and TMDB metadata into a Neo4j knowledge graph, then layers path-based recommendations, shortest-path explanations, GDS analytics, and conversational QA on top — with a Streamlit product UI.
+
+### Overview
+
+This project shows when **relationship-native retrieval** beats chunk-and-embed RAG:
+
+- Idempotent MovieLens ingest and TMDB enrichment into Neo4j
+- Multi-signal graph recommender (shared directors, cast, genres, keywords, co-fans)
+- Shortest meaningful path explanations between titles
+- GraphRAG: LLM generates Cypher from the live schema; Neo4j returns grounded rows; the model verbalizes the evidence
+- Benchmarks vs popularity / item-CF (ranking) and vs TF-IDF vector RAG (factual QA)
+- Interactive Streamlit app: Home, Recommendations, Explain, Graph Explorer, Analytics
+
+### Architecture
+
+```text
+MovieLens CSV + TMDB API
+        │
+        ▼
+  Neo4j knowledge graph
+  (User, Movie, Genre, Director, Actor, Keyword)
+        │
+        ├─► Graph recommender (path ranking)
+        ├─► Explanation engine (shortest path)
+        ├─► GraphRAG (LangChain + Ollama → Cypher)
+        ├─► Neo4j GDS (PageRank, similarity, Louvain)
+        └─► Streamlit UI
+```
+
+### Evaluation highlights
+
+| Layer | Protocol | Result |
+|-------|----------|--------|
+| **Ranking** | 200 users, K=10, 5 liked seeds | Graph path ranker Hit@10 **0.34** vs popularity / item-CF **~0.10** |
+| **QA** | 30 gold questions, `qwen3:8b` | GraphRAG factual **29/30** vs TF-IDF vector RAG **22/30** (same ~93% evidence coverage) |
+
+Write-ups: [`docs/graph_recommender.md`](https://github.com/Ricardo-Bortolotti/cine-graph-rag/blob/main/docs/graph_recommender.md), [`docs/graph_rag.md`](https://github.com/Ricardo-Bortolotti/cine-graph-rag/blob/main/docs/graph_rag.md).
+
+### Main Features
+
+- **Knowledge graph** — `RATED`, `HAS_GENRE`, `DIRECTED_BY`, `ACTED_BY`, `HAS_KEYWORD`
+- **Explainable recommendations** — ranked graph signals + inspectable Cypher paths
+- **GraphRAG** — schema-aware few-shot Cypher generation; answers grounded in Neo4j rows
+- **Graph Explorer** — Pyvis subgraph with search, path highlight, and export
+- **Analytics** — rating skew, genre demand, hubs; GDS notebook for PageRank / Louvain
+- **Docker Compose** — Neo4j (GDS + APOC) + Ollama + Streamlit; local `uv` workflow supported
+- **Reproducible eval** — `scripts/run_evaluation.py` writes `eval/latest_results.json`
+
+### Tech Stack
+
+- Python 3.11
+- Neo4j 5 (Aura or Docker Community + GDS + APOC)
+- LangChain / `langchain-neo4j` / `langchain-ollama`
+- Ollama (local LLMs)
+- Streamlit & Pyvis
+- Pandas, Plotly, scikit-learn
+- Docker Compose & **uv**
+
+### Why This Project Matters
+
+This project demonstrates **GraphRAG vs vector RAG** on relational facts (who directed X, shared cast), explainable graph recommendations that beat strong CF baselines on a held-out split, and a full product surface over a curated knowledge graph — not only notebooks.
+
+---
 
 ## 📚 [Book Research Agent — RAG + Multi-Agent Study Materials](https://github.com/Ricardo-Bortolotti/research-workflow-agent)
 
@@ -335,11 +402,12 @@ Exploratory analysis identified relevant temporal patterns and market behavior i
 - XGBoost
 - LightGBM
 - **PyTorch**
-- **Deep Learning** & Transfer Learning
-- Computer Vision
+- **Deep Learning**
 - **Retrieval-Augmented Generation (RAG)**
-- **LangGraph** & multi-agent workflows
+- **GraphRAG**
+- **LangGraph**
 - **Embeddings & semantic search**
+- **Knowledge graphs**
 - **Hugging Face Inference API**
 - Statistical Modeling
 - Feature Engineering
@@ -351,9 +419,11 @@ Exploratory analysis identified relevant temporal patterns and market behavior i
 - MLflow
 - Optuna
 - Docker
+- **Neo4j**
 - PostgreSQL
 - SQLAlchemy
 - **LangChain**
+- **Ollama**
 - **ChromaDB**
 - **uv** (Python package manager)
 - **GitHub Actions**
